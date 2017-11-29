@@ -5,11 +5,10 @@
 
 //Contiene la configuración necesaria para conectar los nodos discos al servidor
 class TecMFS_Disk{
-private:
+public:
     std::string ip_port;
     std::string path;
 
-public:
     void loadXML(const char* xmlName);      //Carga la configuración contenida en el XML
     bool checkDiskSizeAndStripes(float diskSize, int cantBlocks, float newDiskSize, int newCantBlocks);
 };

@@ -1,10 +1,5 @@
 #include "DiskBlock.h"
 
-/*DiskBlock::DiskBlock(){
-
-}*/
-
-DiskBlock::DiskBlock(bool parityValue, int blockNumber){
+DiskBlock::DiskBlock(bool parityValue){
     this->parityBlock = parityValue;
-    this->blockNumber = blockNumber;
 }

@@ -2,17 +2,19 @@
 #define TECMFS_DISKBLOCK_H
 
 #include <iostream>
+#include "LinkedList.h"
+#include "json.hpp"
+
+using json = nlohmann::json;
 
 class DiskBlock{
 public:
-    bool parityBlock;
-    int blockNumber;    //vertical, lo que usualmente es "A", "B", "C", etc.
+    bool parityBlock;   //Para ver si ese es un bloque de paridad
 
-    std::string bitData;
-    ///metadata, talvez en JSON ///NoSQL
+    const char* data;   //Binario con la información del video
+    json metadata;      //Se guarda los metadatos en este JSON
 
-    //DiskBlock();
-    DiskBlock(bool parityValue, int blockNumber);
+    DiskBlock(bool parityValue);
 };
 
 

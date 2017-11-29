@@ -4,13 +4,20 @@ DiskNode::DiskNode(){
 
 }
 
-DiskNode::DiskNode(int diskNumber, float diskSizeBytes, int cantBlocks){
+DiskNode::DiskNode(int diskNumber, float diskSizeBytes, float blocksSizeBytes){
     this->diskNumber = diskNumber;
+    this->cantMaxBlocks = (int)(diskSizeBytes/blocksSizeBytes);
 
-    for (int blockNum = 1; blockNum <= cantBlocks; blockNum++){
-        if (blockNum - 1 == cantBlocks - diskNumber && cantBlocks - diskNumber > 0)    //Los bloques de paridad irán en subiendo en diagonal desde la esquina inferior izquierda
-            this->blockList.addLast(new DiskBlock(true, blockNum+1));
+    //Se instancia todos los bloques que el disco puede tener, pero van a estar vacíos
+    for (int blockNum = 0; blockNum < cantMaxBlocks; blockNum++){
+        //Los bloques de paridad irán subiendo en diagonal desde la esquina inferior izquierda
+        if (blockNum + 1 == cantMaxBlocks - diskNumber && cantMaxBlocks - diskNumber > 0)   ///Probar
+            this->blockList.addLast(new DiskBlock(true));
         else
-            this->blockList.addLast(new DiskBlock(false, blockNum+1));
+            this->blockList.addLast(new DiskBlock(false));
     }
+}
+
+const char* DiskNode::getStripeData(){     //Pide
+
 }
