@@ -1,7 +1,6 @@
 #ifndef TECMFS_DISKNODE_H
 #define TECMFS_DISKNODE_H
 
-#include "LinkedList.h"
 #include "DiskBlock.h"
 
 class DiskNode{
@@ -11,7 +10,7 @@ public:
     int blockSizeBits;
     int cantMaxBlocks;
 
-    LinkedList<DiskBlock*> blockList;
+    std::vector<DiskBlock*> blockList;
 
     DiskNode();
     DiskNode(int diskNumber, float diskSize, float blocksSize);

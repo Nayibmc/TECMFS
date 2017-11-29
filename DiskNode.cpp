@@ -12,9 +12,9 @@ DiskNode::DiskNode(int diskNumber, float diskSizeBytes, float blocksSizeBytes){
     for (int blockNum = 0; blockNum < cantMaxBlocks; blockNum++){
         //Los bloques de paridad irán subiendo en diagonal desde la esquina inferior izquierda
         if (blockNum + 1 == cantMaxBlocks - diskNumber && cantMaxBlocks - diskNumber > 0)   ///Probar
-            this->blockList.addLast(new DiskBlock(true));
+            this->blockList.push_back(new DiskBlock(true));
         else
-            this->blockList.addLast(new DiskBlock(false));
+            this->blockList.push_back(new DiskBlock(false));
     }
 }
 
