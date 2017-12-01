@@ -14,3 +14,12 @@ bool TecMFS_Disk::checkDiskSizeAndStripes(float diskSize, int cantBlocks, float 
         return true;
     return false;
 }
+
+void TecMFS_Disk::saveBlock(string jsonString) {
+    DiskBlock block;
+    json jsonData = json::parse(jsonString);
+
+    block.data = jsonData["data"];
+    block.metadata = jsonData["metadata"];
+    block.identifier = jsonData["identifier"];
+}

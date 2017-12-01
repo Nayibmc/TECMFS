@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include "tinyxml2.h"
+#include "DiskBlock.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -14,7 +16,9 @@ public:
     int controller_port;
     std::string path;
     string parity;
+    vector<DiskBlock> vectorBlock;
 
+    void saveBlock(string jsonString);
     void loadXML(const char* xmlName);      //Carga la configuración contenida en el XML
     bool checkDiskSizeAndStripes(float diskSize, int cantBlocks, float newDiskSize, int newCantBlocks);
 };
