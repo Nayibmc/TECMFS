@@ -5,13 +5,15 @@
 #include "json.hpp"
 
 using json = nlohmann::json;
+using namespace std;
 
 class DiskBlock{
 public:
 
     int identifier;
-    char* data;   //Binario con la información del video
-    json metadata;      //Se guarda los metadatos en este JSON
+    string data;   //Binario con la información del video
+    string metadata;      //Se guarda los metadatos en este JSON
+    DiskBlock();
     
 };
 

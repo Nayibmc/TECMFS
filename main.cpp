@@ -1,10 +1,9 @@
 #include <iostream>
 
 #include "TecMFS_Disk.h"
-#include "DiskNode.h"
 #include "TCPServer.h"
 
-DiskNode* disk;
+//DiskNode* disk;
 //TCPClient diskClient
 
 //Se va a crear el disco y conectarlo con el ControllerNode
