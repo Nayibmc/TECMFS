@@ -9,12 +9,13 @@ using namespace std;
 
 class DiskBlock{
 public:
+    int blockNumber;
+    string data;          //Binario con la información del video
+    string metadata;
 
-    int identifier;
-    string data;   //Binario con la información del video
-    string metadata;      //Se guarda los metadatos en este JSON
-    DiskBlock();
-    
+    DiskBlock(string data, int blockNumber);
+
+    void addData(string data);
 };
 
 

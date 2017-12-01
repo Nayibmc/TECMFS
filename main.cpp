@@ -9,7 +9,7 @@
 //Se va a crear el disco y conectarlo con el ControllerNode
 int main(){
     TecMFS_Disk diskConfig;     //Va a guardar atributos necesarios para la conexión
-    diskConfig.loadXML("config.xml");  ///Se carga la configuración desde el XML
+    diskConfig.loadXML("config.xml");  //Se carga la configuración desde el XML
     TCPServer server;
     int port;
     std::cout<<"Puerto en el que va a escuchar: ";
@@ -30,5 +30,4 @@ int main(){
         }
     *//*
 */
-    ///Cosas de servidor///
 }
