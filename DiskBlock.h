@@ -9,11 +9,12 @@ using namespace std;
 
 class DiskBlock{
 public:
-    int blockNumber;
+    int identifier;
     string data;          //Binario con la información del video
     string metadata;
 
-    DiskBlock(string data, int blockNumber);
+    DiskBlock();
+    DiskBlock(string data, int identifier);
 
     void addData(string data);
 };

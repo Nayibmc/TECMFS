@@ -20,7 +20,6 @@ public:
 
     void saveBlock(string jsonString);
     void loadXML(const char* xmlName);      //Carga la configuración contenida en el XML
-    bool checkDiskSizeAndStripes(float diskSize, int cantBlocks, float newDiskSize, int newCantBlocks);
 };
 
 

@@ -1,7 +1,10 @@
 #include "DiskBlock.h"
 
+DiskBlock::DiskBlock(){
+};
+
 DiskBlock::DiskBlock(string data, int blockNumber){
-    this->blockNumber = blockNumber;
+    this->identifier = blockNumber;
     addData(data);
 }
 

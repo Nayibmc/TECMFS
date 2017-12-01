@@ -9,12 +9,6 @@ void TecMFS_Disk::loadXML(const char* xmlName){
     this->controller_port=std::stoi(config->FirstChildElement("port")->GetText());
 }
 
-bool TecMFS_Disk::checkDiskSizeAndStripes(float diskSize, int cantBlocks, float newDiskSize, int newCantBlocks){
-    if (diskSize != newDiskSize || cantBlocks != newCantBlocks)
-        return true;
-    return false;
-}
-
 void TecMFS_Disk::saveBlock(string jsonString) {
     DiskBlock block;
     json jsonData = json::parse(jsonString);
