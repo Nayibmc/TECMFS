@@ -2,7 +2,7 @@
 
 #include "TecMFS_Disk.h"
 #include "DiskNode.h"
-//#include "TCPClient"
+#include "TCPServer.h"
 
 DiskNode* disk;
 //TCPClient diskClient
@@ -12,6 +12,11 @@ int main(){
     TecMFS_Disk diskConfig;     //Va a guardar atributos necesarios para la conexión
     diskConfig.loadXML("");  ///Se carga la configuración desde el XML
     ///diskClient...     Se inicializa
+    TCPServer server;
+    int port;
+    std::cout<<"Puerto en el que va a escuchar: ";
+    std::cin>>port;
+    server.start(port);
 
     //Quien "cree" el disco decide su tamaño y la cantidad de bloques que va a tener
     float newDiskSize = 64;
